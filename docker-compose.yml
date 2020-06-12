@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+
+  st3:
+    image: ${DOCKER_REGISTRY-}st3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "8080:80"
+    environment:
+        DBServer: "sql_server"
+        DBPort: "1433"
+        DbUser: "sa"
+        DBPassword: "Passwordxd!23"
+        Database: "restapi"
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql_server
+    environment:
+        SA_PASSWORD: "Passwordxd!23"
+        ACCEPT_EULA: "Y"
+    volumes:
+         - /var/opt/mssql
+    ports:
+         - "1433:1433"
