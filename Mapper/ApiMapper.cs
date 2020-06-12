@@ -12,7 +12,7 @@ namespace ST3.Mapper
     {
         public ApiMapper()
         {
-            CreateMap<NationalPark, NationalParkDto>().ReverseMap();
+            CreateMap<Shelter, ShelterDto>().ReverseMap();
         }
     }
 }

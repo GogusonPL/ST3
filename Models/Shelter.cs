@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST3.Models
 {
-    public class NationalPark
+    public class Shelter
     {
         [Key]
         public int Id { get; set; }

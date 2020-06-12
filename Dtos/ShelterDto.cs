@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ST3.Dtos
 {
-    public class NationalParkDto
+    public class ShelterDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

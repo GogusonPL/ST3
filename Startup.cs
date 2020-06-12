@@ -39,7 +39,7 @@ namespace ST3
             var database = Configuration["Database"] ?? "Colours";
             var connectionString = $"Server={server},{port};Initial Catalog={database}; User ID = {user}; Password={password}";
 
-            services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddScoped<IShelterRepository, ShelterRepository>();
             services.AddAutoMapper(typeof(ApiMapper));
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
@@ -52,9 +52,9 @@ namespace ST3
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                PrepareMigration.MigrateDb(app);
             }
 
-            PrepareMigration.MigrateDb(app);
 
             app.UseHttpsRedirection();
 
