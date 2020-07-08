@@ -1,17 +1,15 @@
 version: '3.4'
-services:
 
+services:
   st3:
     image: ${DOCKER_REGISTRY-}st3
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-        - "8080:80"
     environment:
         DBServer: "sql_server"
         DBPort: "1433"
-        DbUser: "sa"
+        DBUser: "sa"
         DBPassword: "Passwordxd!23"
         Database: "restapi"
   sql_server:
@@ -24,3 +22,8 @@ services:
          - /var/opt/mssql
     ports:
          - "1433:1433"
+  st3front:
+    image: ${DOCKER_REGISTRY-}st3front
+    build:
+      context: .
+      dockerfile: ../ST3Front/Dockerfile

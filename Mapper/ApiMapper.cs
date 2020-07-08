@@ -13,6 +13,9 @@ namespace ST3.Mapper
         public ApiMapper()
         {
             CreateMap<Shelter, ShelterDto>().ReverseMap();
+            CreateMap<Animal, AnimalDto>().ReverseMap();
+            CreateMap<Animal, AnimalUpdateDto>().ReverseMap();
+            CreateMap<Animal, AnimalCreateDto>().ReverseMap();
         }
     }
 }

@@ -16,15 +16,15 @@ namespace ST3.Repositories
         {
             database = context;
         }
-        public bool CreateShelter(Shelter nationalPark)
+        public bool CreateShelter(Shelter shelter)
         {
-            database.Shelters.Add(nationalPark);
+            database.Shelters.Add(shelter);
             return Save();
         }
 
-        public bool DeleteShelter(Shelter nationalPark)
+        public bool DeleteShelter(Shelter shelter)
         {
-            database.Shelters.Remove(nationalPark);
+            database.Shelters.Remove(shelter);
             return Save();
         }
 
@@ -53,9 +53,9 @@ namespace ST3.Repositories
             return database.SaveChanges() >= 0 ? true : false;
         }
 
-        public bool UpdateShelter(Shelter nationalPark)
+        public bool UpdateShelter(Shelter shelter)
         {
-            database.Shelters.Update(nationalPark);
+            database.Shelters.Update(shelter);
             return Save();
         }
     }
