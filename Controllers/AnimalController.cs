@@ -119,7 +119,7 @@ namespace ST3.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult DeleteAnimal(int animalId)
         {
-            if (animalRepo.AnimalExists(animalId))
+            if (!animalRepo.AnimalExists(animalId))
                 return NotFound();
 
             var animal = animalRepo.GetAnimal(animalId);
